@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Build
+
+```
+s2i build . \
+  brandnewbox/bnb-ruby:2.6-postgresql \
+  brandnewbox/puma-hello-world:latest \
+  -p always \
+  -e RAILS_ENV=production
+```
