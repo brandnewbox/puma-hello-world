@@ -27,4 +27,5 @@ Things you may want to cover:
 s2i build .   brandnewbox/bnb-ruby:2.6-postgresql   brandnewbox/puma-hello-world:latest   -p always   -e RAILS_ENV=production --incremental
 docker tag brandnewbox/puma-hello-world:latest brandnewbox/puma-hello-world:4
 docker push brandnewbox/puma-hello-world:4
+docker push brandnewbox/puma-hello-world:latest
 ```
