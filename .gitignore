@@ -36,4 +36,4 @@ public/uploads
 /public/packs
 /public/packs-test
 
-/config/credentials/*
+/config/credentials/production.key
