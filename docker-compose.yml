@@ -9,5 +9,18 @@ services:
       - bundle_cache:/usr/local/bundle:cached
     ports:
       - "3000:3000"
+  redis:
+    image: 'redis:5.0'
+    ports:
+      - 6379:6379
+  sidekiq:
+    image: brandnewbox/bnb-ruby:2.6-postgresql
+    command: bundle exec sidekiq -C ./config/sidekiq.yml
+    volumes:
+      - .:/app:cached
+      - bundle_cache:/usr/local/bundle:cached
+    env_file: .docker-development-vars
+    depends_on:
+      - 'redis'
 volumes:
   bundle_cache:
