@@ -1,0 +1,23 @@
+<p><strong>Rails Environment</strong>: <%= Rails.env %></p>
+<p><strong>Remote IP</strong>: <%= request.remote_ip %></p>
+<p><strong>IP</strong>: <%= request.ip %></p>
+<p><strong>Headers</strong>:</p>
+<%= form_tag do %>
+  <input name="test" />
+  <input type="submit" value="With Token"/>
+  <%= link_to "Reset", root_path %>
+<% end %>
+<form method="post">
+  <input name="test" />
+  <input type="submit" value="Without Token" />
+  <%= link_to "Reset", root_path %>
+</form>
+<table>
+  <% request.headers.env.keys.each do |key| %>
+    <tr>
+      <th><%= key %></th>
+      <td><%= request.headers.env[key].inspect %></td>
+    </tr>
+  <% end %>
+</table>
+<p>Love, <a href="https://brandnewbox.com">Brand New Box</a></p>
