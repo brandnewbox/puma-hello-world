@@ -13,6 +13,10 @@
   <%= link_to "Reset", root_path %>
 </form>
 <table>
+  <tr>
+    <th>request.base_url</th>
+    <td><%= request.base_url %></td>
+  </tr>
   <% request.headers.env.keys.each do |key| %>
     <tr>
       <th><%= key %></th>
