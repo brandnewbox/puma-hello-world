@@ -37,3 +37,5 @@ public/uploads
 /public/packs-test
 
 /config/credentials/production.key
+
+/config/credentials/development.key
