@@ -25,7 +25,7 @@ Things you may want to cover:
 
 ```
 docker build -t brandnewbox/puma-hello-world:latest -f .dockerdev/Dockerfile --build-arg RAILS_ENV=production .
-docker tag brandnewbox/puma-hello-world:latest brandnewbox/puma-hello-world:9
-docker push brandnewbox/puma-hello-world:9
+docker tag brandnewbox/puma-hello-world:latest brandnewbox/puma-hello-world:10
+docker push brandnewbox/puma-hello-world:10
 docker push brandnewbox/puma-hello-world:latest
 ```

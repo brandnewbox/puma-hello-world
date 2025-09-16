@@ -44,9 +44,26 @@ services:
     command: bundle exec rails server -b 0.0.0.0
     ports:
       - '3000:3000'
+  
+  worker:
+    <<: *backend
+    command: bundle exec sidekiq -C config/sidekiq.yml
+
+  redis:
+    image: redis:7.0-alpine
+    volumes:
+      - redis:/data
+    ports:
+      - 6379
+    healthcheck:
+      test: redis-cli ping
+      interval: 1s
+      timeout: 3s
+      retries: 30
 
 volumes:
   bundle:
   history:
   node_modules:
   rails_cache:
+  redis:
