@@ -12,9 +12,4 @@ class HomeController < ApplicationController
   def bad_token
     render template: "home/bad_token"
   end
-
-  def enqueue
-    PutsJob.perform_later
-    redirect_to root_path
-  end
- end
+end
